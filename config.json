@@ -1,7 +1,7 @@
 {
   "slug": "he-care",
   "name": "婴儿管家",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "通过 IMA 笔记和知识库管理宝宝的全生命周期信息",
   "author": "hxrealm",
   "repository": "https://github.com/hxrealm/he-care.git"

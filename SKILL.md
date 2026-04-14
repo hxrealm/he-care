@@ -77,7 +77,7 @@ if ($resp.code -eq 20004) { Show-ImaAuthExpiredGuide; exit }
 
 ### 知识库
 
-- **默认知识库名称**：「宁宝成长手册」
+- **默认知识库名称**：「明宝成长手册」
 - **知识库 ID**（存储于 MEMORY.md，每次操作前读取）：
   ```
   baby_knowledge_base_id: <YJqmR_MloF-qNRLByVJWcfzW3vw9nfyGIiZGWZczZWk=>
@@ -138,7 +138,7 @@ if ($memContent -match 'baby_knowledge_base_id:\s*(.+)') {
 
 # 若无 KB ID，尝试按名称搜索
 if (-not $kbId) {
-    # 用 search_knowledge_base 接口搜索"宁宝成长手册"
+    # 用 search_knowledge_base 接口搜索"明宝成长手册"
     # 找到则更新 KB ID 并继续，找不到则退出
 }
 
@@ -179,21 +179,21 @@ if ($resp.retcode -ne 0 -and $resp.retcode -ne 220001) {
 1. **收集基本信息**（可选，跳过用默认值）
 2. **检测是否已初始化**：搜索是否有「户口档案」笔记
 3. **创建 7 篇笔记**：依次用 `import_doc` 创建
-4. **同步到知识库**：搜索或创建「宁宝成长手册」知识库，批量添加 7 篇笔记
+4. **同步到知识库**：搜索或创建「明宝成长手册」知识库，批量添加 7 篇笔记
 5. **更新 MEMORY.md**：记录知识库 ID
 
 ---
 
 ## 示例：用户已创建知识库，要求导入笔记
 
-> 用户："我已经创建了一个叫宁宝成长手册的知识库，帮我把最新的内容和笔记导入到这个知识库"
+> 用户："我已经创建了一个叫明宝成长手册的知识库，帮我把最新的内容和笔记导入到这个知识库"
 
 **执行步骤：**
 
 1. IMA 前置检查（同上）
 2. 搜索知识库，获取 KB ID：
    ```powershell
-   $body = @{ query = "宁宝成长手册"; cursor = ""; limit = 10 } | ConvertTo-Json -Compress
+   $body = @{ query = "明宝成长手册"; cursor = ""; limit = 10 } | ConvertTo-Json -Compress
    $utf8 = [System.Text.Encoding]::UTF8.GetBytes($body)
    $resp = Invoke-RestMethod -Uri "https://ima.qq.com/openapi/wiki/v1/search_knowledge_base" `
        -Method Post -Headers $headers `
@@ -236,4 +236,4 @@ if ($resp.retcode -ne 0 -and $resp.retcode -ne 220001) {
 - **隐私保护**：户口档案含敏感信息，不在群聊中展示正文
 - **同步失败不阻断**：知识库同步失败不影响笔记记录本身
 - **宝宝信息**（来自 MEMORY.md）：
-  - 姓名：易正宁，昵称：宁宝，出生：2024-04-20，男宝，约 23 个月
+  - 姓名：王小明，昵称：明宝，出生：2024-04-20，男宝，约 23 个月

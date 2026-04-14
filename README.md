@@ -1,7 +1,7 @@
 # he-care（婴儿管家）
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Skill Version](https://img.shields.io/badge/version-1.0.0-green.svg)](config.json)
+[![Skill Version](https://img.shields.io/badge/version-1.1.0-green.svg)](config.json)
 
 通过 IMA（腾讯智能笔记）笔记和知识库系统，管理宝宝的全生命周期信息。
 
@@ -125,6 +125,7 @@ he-care/
 
 | 版本 | 日期 | 说明 |
 |------|------|------|
+| 1.1.0 | 2026-04-14 | 更新宝宝信息为默认值（王小明/明宝） |
 | 1.0.0 | 2026-04-14 | 首次发布 |
 
 ---
